@@ -1,0 +1,51 @@
+﻿
+Prénom et Nom : Ismail Arbaoui
+Numéro de dossier (NI): 537144486
+Temps de réalisation : 
+
+
+Programme inventaire_bornes: vous avez 12 fonctions a compléter
+
+  /4 : creer_borne_avec_chaine
+  /2 :   test unitaire
+  /6 : lire_fichier_bornes
+  /2 :   test unitaire
+  /2 : nombre_de_bornes
+  /2 :   test unitaire
+  /4 : selectionner_bornes_par_rue
+  /2 :   test unitaire
+  /4 : selectionner_bornes_par_cote
+  /2 :   test unitaire
+  /4 : selectionner_borne_par_numero
+  /2 :   test unitaire
+  /11 : calculer_distance_bornes
+  /2 :   test unitaire
+  /11 : trouver_borne_plus_pres
+  /2 :   test unitaire
+  /11 : trouver_bornes_plus_eloignees
+  /2 :   test unitaire
+  /11 : trouver_borne_centrale
+  /2 :   test unitaire
+  /4 : ajouter_borne
+  /2 :   test unitaire
+  /4 : retirer_borne
+  /2 :   test unitaire
+
+	
+	Commentaires :
+
+
+
+
+Pénalités pour non-respect des consignes
+----------------------------------------
+
+
+
+Autres commentaires du correcteur
+---------------------------------
+
+
+
+Total:   /100
+
