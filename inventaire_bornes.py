@@ -3,6 +3,7 @@ Module regroupant les fonctions pour gérer et analyser l'inventaire des bornes 
 la ville de Québec.
 """
 
+from math import sqrt
 
 def creer_borne(no_borne, cote_rue, nom_topographique, longitute, latitude):
     """
@@ -175,6 +176,7 @@ def calculer_distance_bornes(borne_1, borne_2):
     Returns:
         float: La distance entre les deux bornes en kilomètres
     """
+    return sqrt( ((born_2['Coordonnees'][0] - born_1['Coordonnees'][0]) * 110.6) ^ 2 + ((born_2['Coordonnees'][1] - born_1['Coordonnees'][1]) * 78.85) ^ 2)
     
 
 
@@ -258,5 +260,14 @@ if __name__ == '__main__':
     borne = creer_borne(4, 'N', 'Ruelle Rouge', -71.23, 46.82)
     assert borne == {'Numero': 4, 'Cote': 'N', 'Rue': 'Ruelle Rouge', 'Coordonnees': (46.82, -71.23)}
     print('creer_borne: OK')
+    borne1 = creer_borne(1, 'N', 'Ruelle Rouge', -71.23, 46.82)
+    borne2 = creer_borne(2, 'N', 'Ruelle Mauve', -71.23, 45.82)
+    borne3 = creer_borne(3, 'N', 'Ruelle Bleue', -71.33, 46.60)
 
+    distance11 = calculer_distance_bornes(borne1, borne1)
+    assert abs(distance11) < 1e-9
+    distance12 = calculer_distance_bornes(borne1, borne2)
+    assert abs(distance12 - 110.6) < 1e-9
+    distance13 = calculer_distance_bornes(borne1, borne3)
+    assert abs(distance13 - 25.5777) < 0.0001
 
