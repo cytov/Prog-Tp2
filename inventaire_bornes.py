@@ -76,6 +76,7 @@ def lire_fichier_bornes(nom_fichier):
         line = f.readline()
         while line != '':
             bornes_list.append(creer_borne(creer_borne_avec_chaine(line)))
+            line = f.readline()
         f.close()
     except IOError:
         print("Le fichier", nom_fichier, "est introuvable.")
@@ -108,6 +109,12 @@ def selectionner_bornes_par_rue(inventaire, rue):
     Returns:
         list: Liste des bornes qui sont sur la rue donnée
     """
+    list_recherche = []
+    for borne in inventaire:
+        if borne['Rue'] == rue:
+            list_recherche.append(borne)
+    
+    return list_recherche
     
 
 
@@ -123,6 +130,12 @@ def selectionner_bornes_par_cote(inventaire, cote):
     Returns:
         list: Liste des bornes qui sont sur le côté donné
     """
+    list_recherche = []
+    for borne in inventaire:
+        if borne['Cote'] == cote:
+            list_recherche.append(borne)
+    
+    return list_recherche
 
 
 def selectionner_borne_par_numero(inventaire, numero_borne):
@@ -138,6 +151,12 @@ def selectionner_borne_par_numero(inventaire, numero_borne):
             Si le numéro de borne n'existe pas dans l'inventaire, retourner
             le dictionnaire {'Numero': -1}.
     """
+    borne_par_num = {'Numero': -1}
+    for borne in inventaire:
+        if borne['Numero'] == numero_borne:
+            borne_par_num = borne
+
+    return borne_par_num
 
 
 
@@ -156,6 +175,7 @@ def calculer_distance_bornes(borne_1, borne_2):
     Returns:
         float: La distance entre les deux bornes en kilomètres
     """
+    
 
 
 
