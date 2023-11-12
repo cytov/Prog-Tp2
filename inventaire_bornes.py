@@ -55,6 +55,7 @@ def creer_borne_avec_chaine(chaine):
         dict: Un dictionnaire contenant les informations sur la borne, tel que retourné par la fonction creer_borne()
     """
     borne_info_list = chaine.split(",")
+
     return creer_borne(borne_info_list[1],borne_info_list[2],borne_info_list[4],borne_info_list[5],borne_info_list[6])
 
 
@@ -69,7 +70,16 @@ def lire_fichier_bornes(nom_fichier):
     Returns:
         list: Une liste de toutes les bornes contenues dans le fichier
     """
-
+    bornes_list = []
+    try:
+        f = open("vdq-bornestationnement.txt", "r")
+        line = f.readline()
+        while line != '':
+            bornes_list.append(creer_borne(creer_borne_avec_chaine(line)))
+        f.close()
+    except IOError:
+        print("Le fichier", nom_fichier, "est introuvable.")
+    return bornes_list
 
 
 def nombre_de_bornes(inventaire):
@@ -82,6 +92,8 @@ def nombre_de_bornes(inventaire):
     Returns:
         int: Le nombre de bornes contenues dans l'inventaire.
     """
+    return len(inventaire)
+
 
 
 
@@ -96,6 +108,7 @@ def selectionner_bornes_par_rue(inventaire, rue):
     Returns:
         list: Liste des bornes qui sont sur la rue donnée
     """
+    
 
 
 
