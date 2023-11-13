@@ -1,7 +1,7 @@
 ﻿
 Prénom et Nom : Ismail Arbaoui
 Numéro de dossier (NI): 537144486
-Temps de réalisation : 
+Temps de réalisation : 4h
 
 
 Programme inventaire_bornes: vous avez 12 fonctions a compléter

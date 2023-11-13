@@ -76,7 +76,7 @@ def lire_fichier_bornes(nom_fichier):
     """
     bornes_list = []
     try:
-        f = open(nom_fichier, "r")
+        f = open(nom_fichier, "r", encoding="utf-8-sig")
         f.readline()# pour enlever la premiere ligne du fichier txt avec les noms de colonnes.
         line = f.readline()
         while line != '':
